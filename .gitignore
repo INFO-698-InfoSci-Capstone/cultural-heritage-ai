@@ -1,0 +1,11 @@
+# Ignore virtual environment
+venv/
+
+# Ignore model weights and large files
+*.safetensors
+*.ckpt
+*.pt
+
+data/derivedData/
+data/finetuneData/
+data/augmentedData/unspecified
