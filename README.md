@@ -1,19 +1,25 @@
 # Chikankari Design Generator using Generative AI  
 _Capstone Project – Generative AI for Unique cultural heitage_
 
-A full pipeline that **learns the aesthetics of hand-stitched Chikankari embroidery** and lets anyone create new patterns from plain-language prompts through an elegant Streamlit web app.
+This is an end to end Gen AI project that uses **Stable Diffusion v1.5** fine-tuned with **Advanced LoRA** to generate beautiful **Chikankari embroidery patterns** from text prompts like _"floral motifs with paisley"_. It includes a visually appealing **Streamlit interface** and advanced evaluation metrics (FID, LPIPS, CLIPScore, t-SNE).
 
 ---
+## Features
 
+- Text-to-image generation for Chikankari embroidery
+- Fine-tuned with LoRA on 4000+ embroidery images
+- Streamlit-based interactive UI 
+- Evaluation: FID, CLIPScore, LPIPS, t-SNE visualization
+- Latent space interpolation
+- Dataset preprocessing & augmentation included
+
+---  
 ## Highlights
 
 | Pillar | Details |
 | ------ | ------- |
 | **Model** | Stable-Diffusion v1.5 **fine-tuned with Advanced LoRA** on **4 000 +** curated Chikankari images |
 | **Training** | Hugging Face Diffusers workflow – data aug, checkpointing, **Advanced LoRA** |
-| **Eval** | *FID* + *CLIPScore* on held-out set, **LPIPS** vs. originals |
-| **App** | Streamlit UI with smart prompt helper & stylish card layout |
-
 
 ---
 
@@ -29,3 +35,35 @@ A full pipeline that **learns the aesthetics of hand-stitched Chikankari embroid
 │  ├─ lpips_comparison/       # LPIPS CSV + preview grids
 ├─ finalDerivedData/       # curated generated designs (PNG)
 ├─ requirements.txt
+```
+##  Setup Instructions
+
+### 1. Clone the repo
+```bash
+git clone 
+cd cultural-heritage-ai
+```
+### 2. Set up the environment
+```bash
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+### 3.Download base model & LoRA weights
+Base model: CompVis/stable-diffusion-v1-5 from HuggingFace
+
+Place your LoRA weights at:
+```bash
+
+./outputs/chikankari_lora/pytorch_lora_weights.safetensors
+```
+## Running the App
+Launch the Streamlit interface:
+```bash
+
+streamlit run app.py
+```
+Then open your browser to:
+```bash
+http://localhost:8501
+```
