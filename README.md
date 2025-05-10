@@ -19,7 +19,7 @@ This is an end to end Gen AI project that uses **Stable Diffusion v1.5** fine-tu
 | Pillar | Details |
 | ------ | ------- |
 | **Model** | Stable-Diffusion v1.5 **fine-tuned with Advanced LoRA** on **4000 +** curated Chikankari images |
-| **Training** | Hugging Face Diffusers workflow – data aug, checkpointing, **Advanced LoRA** |
+| **Training** | Hugging Face Diffusers workflow – data augmentation, checkpointing, **Advanced LoRA** |
 
 ---
 
@@ -61,7 +61,7 @@ python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 ```
-### 3.Download base model & LoRA weights
+### 3. Download base model & LoRA weights
 Base model: CompVis/stable-diffusion-v1-5 from HuggingFace
 
 Place your LoRA weights at:
@@ -77,5 +77,6 @@ Then open your browser to:
 ```bash
 http://localhost:8501
 ```
+
 > ⚠️ **GPU REQUIRED**  
 > This project uses **Stable Diffusion v1.5 + LoRA**, which **requires a CUDA-compatible GPU**. CPU-only systems will likely fail or be extremely slow.
