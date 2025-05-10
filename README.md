@@ -1,36 +1,31 @@
-# Project compendium template
+# Chikankari Design Generator using Generative AI  
+_Capstone Project – Generative AI for Unique cultural heitage_
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+A full pipeline that **learns the aesthetics of hand-stitched Chikankari embroidery** and lets anyone create new patterns from plain-language prompts through an elegant Streamlit web app.
 
-## A compendium of code, data, and author's manuscript accompanying the manuscript:
+---
 
-#### TBD
+## Highlights
+
+| Pillar | Details |
+| ------ | ------- |
+| **Model** | Stable-Diffusion v1.5 **fine-tuned with Advanced LoRA** on **4 000 +** curated Chikankari images |
+| **Training** | Hugging Face Diffusers workflow – data aug, checkpointing, **Advanced LoRA** |
+| **Eval** | *FID* + *CLIPScore* on held-out set, **LPIPS** vs. originals |
+| **App** | Streamlit UI with smart prompt helper & stylish card layout |
 
 
-## Overview
-This repository is organized as a reproducible research compendium. Future updates to this compendium will include a Dockerfile and Binder Container
+---
 
-## File Organization
-
-    analysis/
-    |
-    ├── logs/
-    │   └── log.md          # log of any progress or relevant information
-    |
-    ├── figures/            # location of the figures produced for the manuscript
-    |
-    ├── data/
-    |   ├── rawData/        # data obtained from elsewhere
-    │   └── derivedData/    # data generated from rawData/ and scripts.*
-    |   
-    └── supplementaryMaterials/
-        ├── supplementaryFigures/     
-        |                   # supplementary figures for the main manuscript
-        └── supplementaryTables/      
-                            # supplementary tables for the main manuscript 
-    
-    R/Python/etc.           # scripts to run in the following order (also see associated README.md)
-        └── script.*        # hypothetical script used to wrangle the raw data, produce figures, analyses, and supplementary materials
-
-        
-
+##  Repository Structure
+```text
+├─ app.py                     # Streamlit interface
+├─ script.ipynb               # Pre processing and Data Augmentation
+├─ mainmodel.ipynb            # Fine tuning
+├─ data/
+│  ├─ rawData/                # original reference photos
+│  ├─ preprocessedData/       # colour-balanced 512² crops
+│  ├─ postprocessedData/      # diffusion outputs cleaned w/ ESRGAN
+│  ├─ lpips_comparison/       # LPIPS CSV + preview grids
+├─ finalDerivedData/       # curated generated designs (PNG)
+├─ requirements.txt
