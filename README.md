@@ -31,11 +31,24 @@ This is an end to end Gen AI project that uses **Stable Diffusion v1.5** fine-tu
 ├─ data/
 │  ├─ rawData/                # original reference photos
 │  ├─ preprocessedData/       # colour-balanced 512² crops
-│  ├─ postprocessedData/      # diffusion outputs cleaned w/ ESRGAN
+│  ├─ postprocessedData/      # diffusion outputs cleaned 
 │  ├─ lpips_comparison/       # LPIPS CSV + preview grids
 ├─ finalDerivedData/          # curated generated designs (PNG)
 ├─ requirements.txt
 ```
+## Requirements
+
+### Hardware
+
+> **GPU Required**  
+
+### Software
+
+- Python 3.8+
+- PyTorch with CUDA
+- diffusers, transformers, accelerate, safetensors
+- Streamlit
+  
 ##  Setup Instructions
 
 ### 1. Clone the repo
@@ -64,3 +77,5 @@ Then open your browser to:
 ```bash
 http://localhost:8501
 ```
+> ⚠️ **GPU REQUIRED**  
+> This project uses **Stable Diffusion v1.5 + LoRA**, which **requires a CUDA-compatible GPU**. CPU-only systems will likely fail or be extremely slow.
