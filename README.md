@@ -18,7 +18,7 @@ This is an end to end Gen AI project that uses **Stable Diffusion v1.5** fine-tu
 
 | Pillar | Details |
 | ------ | ------- |
-| **Model** | Stable-Diffusion v1.5 **fine-tuned with Advanced LoRA** on **4 000 +** curated Chikankari images |
+| **Model** | Stable-Diffusion v1.5 **fine-tuned with Advanced LoRA** on **4000 +** curated Chikankari images |
 | **Training** | Hugging Face Diffusers workflow – data aug, checkpointing, **Advanced LoRA** |
 
 ---
@@ -33,15 +33,14 @@ This is an end to end Gen AI project that uses **Stable Diffusion v1.5** fine-tu
 │  ├─ preprocessedData/       # colour-balanced 512² crops
 │  ├─ postprocessedData/      # diffusion outputs cleaned w/ ESRGAN
 │  ├─ lpips_comparison/       # LPIPS CSV + preview grids
-├─ finalDerivedData/       # curated generated designs (PNG)
+├─ finalDerivedData/          # curated generated designs (PNG)
 ├─ requirements.txt
 ```
 ##  Setup Instructions
 
 ### 1. Clone the repo
 ```bash
-git clone 
-cd cultural-heritage-ai
+git clone https://github.com/INFO-698-InfoSci-Capstone/cultural-heritage-ai.git
 ```
 ### 2. Set up the environment
 ```bash
@@ -53,10 +52,8 @@ pip install -r requirements.txt
 Base model: CompVis/stable-diffusion-v1-5 from HuggingFace
 
 Place your LoRA weights at:
-```bash
-
 ./outputs/chikankari_lora/pytorch_lora_weights.safetensors
-```
+
 ## Running the App
 Launch the Streamlit interface:
 ```bash
